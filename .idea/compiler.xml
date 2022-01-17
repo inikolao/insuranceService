@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="insuranceService" target="11" />
+      <module name="insuranceService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
