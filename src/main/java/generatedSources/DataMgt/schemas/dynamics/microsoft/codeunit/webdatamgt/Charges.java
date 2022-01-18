@@ -1,0 +1,121 @@
+
+package generatedSources.DataMgt.schemas.dynamics.microsoft.codeunit.webdatamgt;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import generatedSources.DataMgt.nav.dynamics.microsoft.xmlports.discount_charges.Root;
+
+
+/**
+ * <p>Java class for anonymous complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="iTable" type="{urn:microsoft-dynamics-nav/xmlports/Discount_Charges}Root"/&gt;
+ *         &lt;element name="insCategoryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="insCompanyCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "iTable",
+    "insCategoryCode",
+    "insCompanyCode"
+})
+@XmlRootElement(name = "Charges")
+public class Charges {
+
+    @XmlElement(required = true)
+    protected Root iTable;
+    @XmlElement(required = true)
+    protected String insCategoryCode;
+    @XmlElement(required = true)
+    protected String insCompanyCode;
+
+    /**
+     * Gets the value of the iTable property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Root }
+     *     
+     */
+    public Root getITable() {
+        return iTable;
+    }
+
+    /**
+     * Sets the value of the iTable property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Root }
+     *     
+     */
+    public void setITable(Root value) {
+        this.iTable = value;
+    }
+
+    /**
+     * Gets the value of the insCategoryCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getInsCategoryCode() {
+        return insCategoryCode;
+    }
+
+    /**
+     * Sets the value of the insCategoryCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setInsCategoryCode(String value) {
+        this.insCategoryCode = value;
+    }
+
+    /**
+     * Gets the value of the insCompanyCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getInsCompanyCode() {
+        return insCompanyCode;
+    }
+
+    /**
+     * Sets the value of the insCompanyCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setInsCompanyCode(String value) {
+        this.insCompanyCode = value;
+    }
+
+}

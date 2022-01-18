@@ -1,0 +1,1876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="76fdb110-9acb-45fc-93b6-65ce8fae7eca" activeEnvironment="Default" name="AIG - DataMgt" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="e9c568b6-f55b-4578-9401-d89a644d1dbc" wsaVersion="NONE" name="WebDataMgt_Binding" type="wsdl" bindingName="{urn:microsoft-dynamics-schemas/codeunit/WebDataMgt}WebDataMgt_Binding" soapVersion="1_1" anonymous="optional" definition="file:/home/sotocan/Programming/script_it/Docs/AIG/DataMgtm.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/sotocan/Programming/script_it/Docs/AIG/DataMgtm.wsdl"><con:part><con:url>file:/home/sotocan/Programming/script_it/Docs/AIG/DataMgtm.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-nav/xmlports/Tables" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:microsoft-dynamics-nav/xmlports/Tables">
+      <complexType name="Records">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="Code" type="string"/>
+          <element minOccurs="0" maxOccurs="1" name="Description" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="Root" mixed="true">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="Records" type="tns:Records"/>
+        </sequence>
+      </complexType>
+      <element name="Root" type="tns:Root"/>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-nav/xmlports/Covers" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:microsoft-dynamics-nav/xmlports/Covers">
+      <complexType name="Records">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="Code" type="string"/>
+          <element minOccurs="0" maxOccurs="1" name="Description" type="string"/>
+          <element minOccurs="0" maxOccurs="1" name="Type" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="Root" mixed="true">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="Records" type="tns:Records"/>
+        </sequence>
+      </complexType>
+      <element name="Root" type="tns:Root"/>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-nav/xmlports/Discount_Charges" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:microsoft-dynamics-nav/xmlports/Discount_Charges">
+      <complexType name="Records">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="Code" type="string"/>
+          <element minOccurs="0" maxOccurs="1" name="Description" type="string"/>
+          <element minOccurs="0" maxOccurs="1" default="0" name="Percentage" type="decimal"/>
+          <element minOccurs="0" maxOccurs="1" default="0" name="Amount" type="decimal"/>
+        </sequence>
+      </complexType>
+      <complexType name="Root" mixed="true">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="Records" type="tns:Records"/>
+        </sequence>
+      </complexType>
+      <element name="Root" type="tns:Root"/>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-nav/xmlports/Ins_Makes" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:microsoft-dynamics-nav/xmlports/Ins_Makes">
+      <complexType name="Records">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="Code" type="string"/>
+          <element minOccurs="0" maxOccurs="1" name="Name" type="string"/>
+          <element minOccurs="1" maxOccurs="1" name="Type" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="Root" mixed="true">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="Records" type="tns:Records"/>
+        </sequence>
+      </complexType>
+      <element name="Root" type="tns:Root"/>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="TaxOffices">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q1:Root" xmlns:q1="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="TaxOffices_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q2:Root" xmlns:q2="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Professions">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q3:Root" xmlns:q3="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Professions_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q4:Root" xmlns:q4="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RelationTypes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q5:Root" xmlns:q5="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RelationTypes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q6:Root" xmlns:q6="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsCompanies">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q7:Root" xmlns:q7="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsCompanies_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q8:Root" xmlns:q8="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Brokers">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q9:Root" xmlns:q9="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Brokers_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q10:Root" xmlns:q10="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFieldsTemplates">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q11:Root" xmlns:q11="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFieldsTemplates_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q12:Root" xmlns:q12="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFields">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q13:Root" xmlns:q13="urn:microsoft-dynamics-nav/xmlports/Covers"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFields_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q14:Root" xmlns:q14="urn:microsoft-dynamics-nav/xmlports/Covers"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFieldsValues">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="code" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q15:Root" xmlns:q15="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFieldsValues_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q16:Root" xmlns:q16="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFieldsPerTemplate">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="templateCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q17:Root" xmlns:q17="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomFieldsPerTemplate_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q18:Root" xmlns:q18="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Covers">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q19:Root" xmlns:q19="urn:microsoft-dynamics-nav/xmlports/Covers"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCompanyCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Covers_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q20:Root" xmlns:q20="urn:microsoft-dynamics-nav/xmlports/Covers"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Packages">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q21:Root" xmlns:q21="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCompanyCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insObjectTypeCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Packages_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q22:Root" xmlns:q22="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Discounts">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q23:Root" xmlns:q23="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCompanyCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Discounts_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q24:Root" xmlns:q24="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Charges">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q25:Root" xmlns:q25="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCompanyCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Charges_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q26:Root" xmlns:q26="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VesselTypes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q27:Root" xmlns:q27="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VesselTypes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q28:Root" xmlns:q28="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VehicleTypes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q29:Root" xmlns:q29="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VehicleTypes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q30:Root" xmlns:q30="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Makes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q31:Root" xmlns:q31="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Makes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q32:Root" xmlns:q32="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="MakesByType">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q33:Root" xmlns:q33="urn:microsoft-dynamics-nav/xmlports/Ins_Makes"/>
+            <element minOccurs="1" maxOccurs="1" name="makeType" type="int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="MakesByType_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q34:Root" xmlns:q34="urn:microsoft-dynamics-nav/xmlports/Ins_Makes"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Models">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q35:Root" xmlns:q35="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+            <element minOccurs="1" maxOccurs="1" name="makeCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Models_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q36:Root" xmlns:q36="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Colors">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q37:Root" xmlns:q37="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Colors_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q38:Root" xmlns:q38="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Banks">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q39:Root" xmlns:q39="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Banks_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q40:Root" xmlns:q40="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Counties">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q41:Root" xmlns:q41="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Counties_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q42:Root" xmlns:q42="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CountriesRegions">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q43:Root" xmlns:q43="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CountriesRegions_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q44:Root" xmlns:q44="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Ports">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q45:Root" xmlns:q45="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Ports_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q46:Root" xmlns:q46="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VesselClassSociety">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q47:Root" xmlns:q47="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VesselClassSociety_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q48:Root" xmlns:q48="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsObjectTypes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q49:Root" xmlns:q49="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsObjectTypes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q50:Root" xmlns:q50="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsObjectTypeGroups">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q51:Root" xmlns:q51="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insSubCategoryCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsObjectTypeGroups_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q52:Root" xmlns:q52="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DurationTypes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="insCategory" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q53:Root" xmlns:q53="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DurationTypes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q54:Root" xmlns:q54="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsCategories">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q55:Root" xmlns:q55="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsCategories_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q56:Root" xmlns:q56="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsSubCategories">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q57:Root" xmlns:q57="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsSubCategories_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q58:Root" xmlns:q58="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CoverCategories">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q59:Root" xmlns:q59="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CoverCategories_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q60:Root" xmlns:q60="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EndorsementReasons">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q61:Root" xmlns:q61="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EndorsementReasons_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q62:Root" xmlns:q62="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomerDiscountGroups">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q63:Root" xmlns:q63="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CustomerDiscountGroups_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q64:Root" xmlns:q64="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AttachedDocumentTypes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q65:Root" xmlns:q65="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AttachedDocumentTypes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q66:Root" xmlns:q66="urn:microsoft-dynamics-nav/xmlports/Tables"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CoversByPackage">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q67:Root" xmlns:q67="urn:microsoft-dynamics-nav/xmlports/Covers"/>
+            <element minOccurs="1" maxOccurs="1" name="packageCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insObjectTypeCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insObjectTypeGroupCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="brokerNo" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="referenceDate" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CoversByPackage_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q68:Root" xmlns:q68="urn:microsoft-dynamics-nav/xmlports/Covers"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiscountsByPackage">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q69:Root" xmlns:q69="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+            <element minOccurs="1" maxOccurs="1" name="packageCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCompanyCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiscountsByPackage_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q70:Root" xmlns:q70="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ChargesByPackage">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q71:Root" xmlns:q71="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+            <element minOccurs="1" maxOccurs="1" name="packageCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCategoryCode" type="string"/>
+            <element minOccurs="1" maxOccurs="1" name="insCompanyCode" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ChargesByPackage_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iTable" type="q72:Root" xmlns:q72="urn:microsoft-dynamics-nav/xmlports/Discount_Charges"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="TaxOffices">
+    <part name="parameters" element="tns:TaxOffices"/>
+  </message>
+  <message name="TaxOffices_Result">
+    <part name="parameters" element="tns:TaxOffices_Result"/>
+  </message>
+  <message name="Professions">
+    <part name="parameters" element="tns:Professions"/>
+  </message>
+  <message name="Professions_Result">
+    <part name="parameters" element="tns:Professions_Result"/>
+  </message>
+  <message name="RelationTypes">
+    <part name="parameters" element="tns:RelationTypes"/>
+  </message>
+  <message name="RelationTypes_Result">
+    <part name="parameters" element="tns:RelationTypes_Result"/>
+  </message>
+  <message name="InsCompanies">
+    <part name="parameters" element="tns:InsCompanies"/>
+  </message>
+  <message name="InsCompanies_Result">
+    <part name="parameters" element="tns:InsCompanies_Result"/>
+  </message>
+  <message name="Brokers">
+    <part name="parameters" element="tns:Brokers"/>
+  </message>
+  <message name="Brokers_Result">
+    <part name="parameters" element="tns:Brokers_Result"/>
+  </message>
+  <message name="CustomFieldsTemplates">
+    <part name="parameters" element="tns:CustomFieldsTemplates"/>
+  </message>
+  <message name="CustomFieldsTemplates_Result">
+    <part name="parameters" element="tns:CustomFieldsTemplates_Result"/>
+  </message>
+  <message name="CustomFields">
+    <part name="parameters" element="tns:CustomFields"/>
+  </message>
+  <message name="CustomFields_Result">
+    <part name="parameters" element="tns:CustomFields_Result"/>
+  </message>
+  <message name="CustomFieldsValues">
+    <part name="parameters" element="tns:CustomFieldsValues"/>
+  </message>
+  <message name="CustomFieldsValues_Result">
+    <part name="parameters" element="tns:CustomFieldsValues_Result"/>
+  </message>
+  <message name="CustomFieldsPerTemplate">
+    <part name="parameters" element="tns:CustomFieldsPerTemplate"/>
+  </message>
+  <message name="CustomFieldsPerTemplate_Result">
+    <part name="parameters" element="tns:CustomFieldsPerTemplate_Result"/>
+  </message>
+  <message name="Covers">
+    <part name="parameters" element="tns:Covers"/>
+  </message>
+  <message name="Covers_Result">
+    <part name="parameters" element="tns:Covers_Result"/>
+  </message>
+  <message name="Packages">
+    <part name="parameters" element="tns:Packages"/>
+  </message>
+  <message name="Packages_Result">
+    <part name="parameters" element="tns:Packages_Result"/>
+  </message>
+  <message name="Discounts">
+    <part name="parameters" element="tns:Discounts"/>
+  </message>
+  <message name="Discounts_Result">
+    <part name="parameters" element="tns:Discounts_Result"/>
+  </message>
+  <message name="Charges">
+    <part name="parameters" element="tns:Charges"/>
+  </message>
+  <message name="Charges_Result">
+    <part name="parameters" element="tns:Charges_Result"/>
+  </message>
+  <message name="VesselTypes">
+    <part name="parameters" element="tns:VesselTypes"/>
+  </message>
+  <message name="VesselTypes_Result">
+    <part name="parameters" element="tns:VesselTypes_Result"/>
+  </message>
+  <message name="VehicleTypes">
+    <part name="parameters" element="tns:VehicleTypes"/>
+  </message>
+  <message name="VehicleTypes_Result">
+    <part name="parameters" element="tns:VehicleTypes_Result"/>
+  </message>
+  <message name="Makes">
+    <part name="parameters" element="tns:Makes"/>
+  </message>
+  <message name="Makes_Result">
+    <part name="parameters" element="tns:Makes_Result"/>
+  </message>
+  <message name="MakesByType">
+    <part name="parameters" element="tns:MakesByType"/>
+  </message>
+  <message name="MakesByType_Result">
+    <part name="parameters" element="tns:MakesByType_Result"/>
+  </message>
+  <message name="Models">
+    <part name="parameters" element="tns:Models"/>
+  </message>
+  <message name="Models_Result">
+    <part name="parameters" element="tns:Models_Result"/>
+  </message>
+  <message name="Colors">
+    <part name="parameters" element="tns:Colors"/>
+  </message>
+  <message name="Colors_Result">
+    <part name="parameters" element="tns:Colors_Result"/>
+  </message>
+  <message name="Banks">
+    <part name="parameters" element="tns:Banks"/>
+  </message>
+  <message name="Banks_Result">
+    <part name="parameters" element="tns:Banks_Result"/>
+  </message>
+  <message name="Counties">
+    <part name="parameters" element="tns:Counties"/>
+  </message>
+  <message name="Counties_Result">
+    <part name="parameters" element="tns:Counties_Result"/>
+  </message>
+  <message name="CountriesRegions">
+    <part name="parameters" element="tns:CountriesRegions"/>
+  </message>
+  <message name="CountriesRegions_Result">
+    <part name="parameters" element="tns:CountriesRegions_Result"/>
+  </message>
+  <message name="Ports">
+    <part name="parameters" element="tns:Ports"/>
+  </message>
+  <message name="Ports_Result">
+    <part name="parameters" element="tns:Ports_Result"/>
+  </message>
+  <message name="VesselClassSociety">
+    <part name="parameters" element="tns:VesselClassSociety"/>
+  </message>
+  <message name="VesselClassSociety_Result">
+    <part name="parameters" element="tns:VesselClassSociety_Result"/>
+  </message>
+  <message name="InsObjectTypes">
+    <part name="parameters" element="tns:InsObjectTypes"/>
+  </message>
+  <message name="InsObjectTypes_Result">
+    <part name="parameters" element="tns:InsObjectTypes_Result"/>
+  </message>
+  <message name="InsObjectTypeGroups">
+    <part name="parameters" element="tns:InsObjectTypeGroups"/>
+  </message>
+  <message name="InsObjectTypeGroups_Result">
+    <part name="parameters" element="tns:InsObjectTypeGroups_Result"/>
+  </message>
+  <message name="DurationTypes">
+    <part name="parameters" element="tns:DurationTypes"/>
+  </message>
+  <message name="DurationTypes_Result">
+    <part name="parameters" element="tns:DurationTypes_Result"/>
+  </message>
+  <message name="InsCategories">
+    <part name="parameters" element="tns:InsCategories"/>
+  </message>
+  <message name="InsCategories_Result">
+    <part name="parameters" element="tns:InsCategories_Result"/>
+  </message>
+  <message name="InsSubCategories">
+    <part name="parameters" element="tns:InsSubCategories"/>
+  </message>
+  <message name="InsSubCategories_Result">
+    <part name="parameters" element="tns:InsSubCategories_Result"/>
+  </message>
+  <message name="CoverCategories">
+    <part name="parameters" element="tns:CoverCategories"/>
+  </message>
+  <message name="CoverCategories_Result">
+    <part name="parameters" element="tns:CoverCategories_Result"/>
+  </message>
+  <message name="EndorsementReasons">
+    <part name="parameters" element="tns:EndorsementReasons"/>
+  </message>
+  <message name="EndorsementReasons_Result">
+    <part name="parameters" element="tns:EndorsementReasons_Result"/>
+  </message>
+  <message name="CustomerDiscountGroups">
+    <part name="parameters" element="tns:CustomerDiscountGroups"/>
+  </message>
+  <message name="CustomerDiscountGroups_Result">
+    <part name="parameters" element="tns:CustomerDiscountGroups_Result"/>
+  </message>
+  <message name="AttachedDocumentTypes">
+    <part name="parameters" element="tns:AttachedDocumentTypes"/>
+  </message>
+  <message name="AttachedDocumentTypes_Result">
+    <part name="parameters" element="tns:AttachedDocumentTypes_Result"/>
+  </message>
+  <message name="CoversByPackage">
+    <part name="parameters" element="tns:CoversByPackage"/>
+  </message>
+  <message name="CoversByPackage_Result">
+    <part name="parameters" element="tns:CoversByPackage_Result"/>
+  </message>
+  <message name="DiscountsByPackage">
+    <part name="parameters" element="tns:DiscountsByPackage"/>
+  </message>
+  <message name="DiscountsByPackage_Result">
+    <part name="parameters" element="tns:DiscountsByPackage_Result"/>
+  </message>
+  <message name="ChargesByPackage">
+    <part name="parameters" element="tns:ChargesByPackage"/>
+  </message>
+  <message name="ChargesByPackage_Result">
+    <part name="parameters" element="tns:ChargesByPackage_Result"/>
+  </message>
+  <portType name="WebDataMgt_Port">
+    <operation name="TaxOffices">
+      <input name="TaxOffices" message="tns:TaxOffices"/>
+      <output name="TaxOffices_Result" message="tns:TaxOffices_Result"/>
+    </operation>
+    <operation name="Professions">
+      <input name="Professions" message="tns:Professions"/>
+      <output name="Professions_Result" message="tns:Professions_Result"/>
+    </operation>
+    <operation name="RelationTypes">
+      <input name="RelationTypes" message="tns:RelationTypes"/>
+      <output name="RelationTypes_Result" message="tns:RelationTypes_Result"/>
+    </operation>
+    <operation name="InsCompanies">
+      <input name="InsCompanies" message="tns:InsCompanies"/>
+      <output name="InsCompanies_Result" message="tns:InsCompanies_Result"/>
+    </operation>
+    <operation name="Brokers">
+      <input name="Brokers" message="tns:Brokers"/>
+      <output name="Brokers_Result" message="tns:Brokers_Result"/>
+    </operation>
+    <operation name="CustomFieldsTemplates">
+      <input name="CustomFieldsTemplates" message="tns:CustomFieldsTemplates"/>
+      <output name="CustomFieldsTemplates_Result" message="tns:CustomFieldsTemplates_Result"/>
+    </operation>
+    <operation name="CustomFields">
+      <input name="CustomFields" message="tns:CustomFields"/>
+      <output name="CustomFields_Result" message="tns:CustomFields_Result"/>
+    </operation>
+    <operation name="CustomFieldsValues">
+      <input name="CustomFieldsValues" message="tns:CustomFieldsValues"/>
+      <output name="CustomFieldsValues_Result" message="tns:CustomFieldsValues_Result"/>
+    </operation>
+    <operation name="CustomFieldsPerTemplate">
+      <input name="CustomFieldsPerTemplate" message="tns:CustomFieldsPerTemplate"/>
+      <output name="CustomFieldsPerTemplate_Result" message="tns:CustomFieldsPerTemplate_Result"/>
+    </operation>
+    <operation name="Covers">
+      <input name="Covers" message="tns:Covers"/>
+      <output name="Covers_Result" message="tns:Covers_Result"/>
+    </operation>
+    <operation name="Packages">
+      <input name="Packages" message="tns:Packages"/>
+      <output name="Packages_Result" message="tns:Packages_Result"/>
+    </operation>
+    <operation name="Discounts">
+      <input name="Discounts" message="tns:Discounts"/>
+      <output name="Discounts_Result" message="tns:Discounts_Result"/>
+    </operation>
+    <operation name="Charges">
+      <input name="Charges" message="tns:Charges"/>
+      <output name="Charges_Result" message="tns:Charges_Result"/>
+    </operation>
+    <operation name="VesselTypes">
+      <input name="VesselTypes" message="tns:VesselTypes"/>
+      <output name="VesselTypes_Result" message="tns:VesselTypes_Result"/>
+    </operation>
+    <operation name="VehicleTypes">
+      <input name="VehicleTypes" message="tns:VehicleTypes"/>
+      <output name="VehicleTypes_Result" message="tns:VehicleTypes_Result"/>
+    </operation>
+    <operation name="Makes">
+      <input name="Makes" message="tns:Makes"/>
+      <output name="Makes_Result" message="tns:Makes_Result"/>
+    </operation>
+    <operation name="MakesByType">
+      <input name="MakesByType" message="tns:MakesByType"/>
+      <output name="MakesByType_Result" message="tns:MakesByType_Result"/>
+    </operation>
+    <operation name="Models">
+      <input name="Models" message="tns:Models"/>
+      <output name="Models_Result" message="tns:Models_Result"/>
+    </operation>
+    <operation name="Colors">
+      <input name="Colors" message="tns:Colors"/>
+      <output name="Colors_Result" message="tns:Colors_Result"/>
+    </operation>
+    <operation name="Banks">
+      <input name="Banks" message="tns:Banks"/>
+      <output name="Banks_Result" message="tns:Banks_Result"/>
+    </operation>
+    <operation name="Counties">
+      <input name="Counties" message="tns:Counties"/>
+      <output name="Counties_Result" message="tns:Counties_Result"/>
+    </operation>
+    <operation name="CountriesRegions">
+      <input name="CountriesRegions" message="tns:CountriesRegions"/>
+      <output name="CountriesRegions_Result" message="tns:CountriesRegions_Result"/>
+    </operation>
+    <operation name="Ports">
+      <input name="Ports" message="tns:Ports"/>
+      <output name="Ports_Result" message="tns:Ports_Result"/>
+    </operation>
+    <operation name="VesselClassSociety">
+      <input name="VesselClassSociety" message="tns:VesselClassSociety"/>
+      <output name="VesselClassSociety_Result" message="tns:VesselClassSociety_Result"/>
+    </operation>
+    <operation name="InsObjectTypes">
+      <input name="InsObjectTypes" message="tns:InsObjectTypes"/>
+      <output name="InsObjectTypes_Result" message="tns:InsObjectTypes_Result"/>
+    </operation>
+    <operation name="InsObjectTypeGroups">
+      <input name="InsObjectTypeGroups" message="tns:InsObjectTypeGroups"/>
+      <output name="InsObjectTypeGroups_Result" message="tns:InsObjectTypeGroups_Result"/>
+    </operation>
+    <operation name="DurationTypes">
+      <input name="DurationTypes" message="tns:DurationTypes"/>
+      <output name="DurationTypes_Result" message="tns:DurationTypes_Result"/>
+    </operation>
+    <operation name="InsCategories">
+      <input name="InsCategories" message="tns:InsCategories"/>
+      <output name="InsCategories_Result" message="tns:InsCategories_Result"/>
+    </operation>
+    <operation name="InsSubCategories">
+      <input name="InsSubCategories" message="tns:InsSubCategories"/>
+      <output name="InsSubCategories_Result" message="tns:InsSubCategories_Result"/>
+    </operation>
+    <operation name="CoverCategories">
+      <input name="CoverCategories" message="tns:CoverCategories"/>
+      <output name="CoverCategories_Result" message="tns:CoverCategories_Result"/>
+    </operation>
+    <operation name="EndorsementReasons">
+      <input name="EndorsementReasons" message="tns:EndorsementReasons"/>
+      <output name="EndorsementReasons_Result" message="tns:EndorsementReasons_Result"/>
+    </operation>
+    <operation name="CustomerDiscountGroups">
+      <input name="CustomerDiscountGroups" message="tns:CustomerDiscountGroups"/>
+      <output name="CustomerDiscountGroups_Result" message="tns:CustomerDiscountGroups_Result"/>
+    </operation>
+    <operation name="AttachedDocumentTypes">
+      <input name="AttachedDocumentTypes" message="tns:AttachedDocumentTypes"/>
+      <output name="AttachedDocumentTypes_Result" message="tns:AttachedDocumentTypes_Result"/>
+    </operation>
+    <operation name="CoversByPackage">
+      <input name="CoversByPackage" message="tns:CoversByPackage"/>
+      <output name="CoversByPackage_Result" message="tns:CoversByPackage_Result"/>
+    </operation>
+    <operation name="DiscountsByPackage">
+      <input name="DiscountsByPackage" message="tns:DiscountsByPackage"/>
+      <output name="DiscountsByPackage_Result" message="tns:DiscountsByPackage_Result"/>
+    </operation>
+    <operation name="ChargesByPackage">
+      <input name="ChargesByPackage" message="tns:ChargesByPackage"/>
+      <output name="ChargesByPackage_Result" message="tns:ChargesByPackage_Result"/>
+    </operation>
+  </portType>
+  <binding name="WebDataMgt_Binding" type="tns:WebDataMgt_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <operation name="TaxOffices">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:TaxOffices" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="TaxOffices">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="TaxOffices_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Professions">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Professions" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Professions">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Professions_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="RelationTypes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:RelationTypes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="RelationTypes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="RelationTypes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="InsCompanies">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsCompanies" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="InsCompanies">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="InsCompanies_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Brokers">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Brokers" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Brokers">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Brokers_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CustomFieldsTemplates">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsTemplates" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CustomFieldsTemplates">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CustomFieldsTemplates_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CustomFields">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFields" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CustomFields">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CustomFields_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CustomFieldsValues">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsValues" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CustomFieldsValues">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CustomFieldsValues_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CustomFieldsPerTemplate">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsPerTemplate" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CustomFieldsPerTemplate">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CustomFieldsPerTemplate_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Covers">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Covers" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Covers">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Covers_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Packages">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Packages" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Packages">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Packages_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Discounts">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Discounts" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Discounts">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Discounts_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Charges">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Charges" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Charges">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Charges_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="VesselTypes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VesselTypes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="VesselTypes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="VesselTypes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="VehicleTypes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VehicleTypes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="VehicleTypes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="VehicleTypes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Makes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Makes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Makes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Makes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="MakesByType">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:MakesByType" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="MakesByType">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="MakesByType_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Models">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Models" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Models">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Models_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Colors">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Colors" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Colors">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Colors_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Banks">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Banks" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Banks">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Banks_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Counties">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Counties" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Counties">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Counties_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CountriesRegions">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CountriesRegions" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CountriesRegions">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CountriesRegions_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="Ports">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Ports" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="Ports">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="Ports_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="VesselClassSociety">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VesselClassSociety" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="VesselClassSociety">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="VesselClassSociety_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="InsObjectTypes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsObjectTypes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="InsObjectTypes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="InsObjectTypes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="InsObjectTypeGroups">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsObjectTypeGroups" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="InsObjectTypeGroups">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="InsObjectTypeGroups_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="DurationTypes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:DurationTypes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="DurationTypes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="DurationTypes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="InsCategories">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsCategories" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="InsCategories">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="InsCategories_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="InsSubCategories">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsSubCategories" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="InsSubCategories">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="InsSubCategories_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CoverCategories">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CoverCategories" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CoverCategories">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CoverCategories_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="EndorsementReasons">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:EndorsementReasons" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="EndorsementReasons">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="EndorsementReasons_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CustomerDiscountGroups">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomerDiscountGroups" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CustomerDiscountGroups">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CustomerDiscountGroups_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="AttachedDocumentTypes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:AttachedDocumentTypes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="AttachedDocumentTypes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="AttachedDocumentTypes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="CoversByPackage">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CoversByPackage" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="CoversByPackage">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="CoversByPackage_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="DiscountsByPackage">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:DiscountsByPackage" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="DiscountsByPackage">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="DiscountsByPackage_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="ChargesByPackage">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:ChargesByPackage" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input name="ChargesByPackage">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output name="ChargesByPackage_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="WebDataMgt">
+    <port name="WebDataMgt_Port" binding="tns:WebDataMgt_Binding">
+      <address location="https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint></con:endpoints><con:operation id="5e49e1b3-1996-451c-abde-c0fcce04c810" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:AttachedDocumentTypes" name="AttachedDocumentTypes" bindingOperationName="AttachedDocumentTypes" type="Request-Response" outputName="AttachedDocumentTypes_Result" inputName="AttachedDocumentTypes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="87179961-8807-4847-bb20-04610b864694" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:AttachedDocumentTypes>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:AttachedDocumentTypes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:AttachedDocumentTypes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6e432633-a80c-4dc9-a85a-e0c104ec3b3d" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Banks" name="Banks" bindingOperationName="Banks" type="Request-Response" outputName="Banks_Result" inputName="Banks" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="05c387ee-9365-46b6-8f5c-932e32766dab" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Banks>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:Banks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Banks"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5d47c0a6-a2c7-4040-8160-06a89ee6e501" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Brokers" name="Brokers" bindingOperationName="Brokers" type="Request-Response" outputName="Brokers_Result" inputName="Brokers" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1a4d593f-9062-44d6-bf50-380b703b3880" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Brokers>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:Brokers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Brokers"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0ba2fa5e-aa86-458c-98c4-60817b142053" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Charges" name="Charges" bindingOperationName="Charges" type="Request-Response" outputName="Charges_Result" inputName="Charges" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b185d762-fd50-4224-b3cb-e71ad06c40cc" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:dis="urn:microsoft-dynamics-nav/xmlports/Discount_Charges">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Charges>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <dis:Records>
+               <dis:Code>?</dis:Code>
+               <!--Optional:-->
+               <dis:Description>?</dis:Description>
+               <!--Optional:-->
+               <dis:Percentage>0</dis:Percentage>
+               <!--Optional:-->
+               <dis:Amount>0</dis:Amount>
+            </dis:Records>
+            gero
+         </web:iTable>
+         <web:insCategoryCode>?</web:insCategoryCode>
+         <web:insCompanyCode>?</web:insCompanyCode>
+      </web:Charges>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Charges"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="24e2c74f-17cc-44e9-9d51-5867203ef608" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:ChargesByPackage" name="ChargesByPackage" bindingOperationName="ChargesByPackage" type="Request-Response" outputName="ChargesByPackage_Result" inputName="ChargesByPackage" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="403dda0a-4d82-4260-aa0b-5b4e97857b1a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:dis="urn:microsoft-dynamics-nav/xmlports/Discount_Charges">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ChargesByPackage>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <dis:Records>
+               <dis:Code>?</dis:Code>
+               <!--Optional:-->
+               <dis:Description>?</dis:Description>
+               <!--Optional:-->
+               <dis:Percentage>0</dis:Percentage>
+               <!--Optional:-->
+               <dis:Amount>0</dis:Amount>
+            </dis:Records>
+            gero
+         </web:iTable>
+         <web:packageCode>?</web:packageCode>
+         <web:insCategoryCode>?</web:insCategoryCode>
+         <web:insCompanyCode>?</web:insCompanyCode>
+      </web:ChargesByPackage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:ChargesByPackage"/></con:call></con:operation><con:operation id="75c45f58-0121-43ac-8571-2528c0e05bdd" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Colors" name="Colors" bindingOperationName="Colors" type="Request-Response" outputName="Colors_Result" inputName="Colors" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="accdf4ad-1693-44a9-b7de-bfb82c41e308" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Colors>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:Colors>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Colors"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3959d4a3-2d4a-423c-b75f-474f022f22a0" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Counties" name="Counties" bindingOperationName="Counties" type="Request-Response" outputName="Counties_Result" inputName="Counties" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca66b998-27a5-496d-8d92-7494482b98e3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Counties>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:Counties>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Counties"/></con:call></con:operation><con:operation id="eda644ab-7c36-4eee-8a89-96506b41eb49" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CountriesRegions" name="CountriesRegions" bindingOperationName="CountriesRegions" type="Request-Response" outputName="CountriesRegions_Result" inputName="CountriesRegions" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4a171d31-4b09-4bf0-8413-15005ec5ba6c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CountriesRegions>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:CountriesRegions>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CountriesRegions"/></con:call></con:operation><con:operation id="ee859b0f-5029-45ae-adfb-505908910e35" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CoverCategories" name="CoverCategories" bindingOperationName="CoverCategories" type="Request-Response" outputName="CoverCategories_Result" inputName="CoverCategories" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f9d4cfcd-77ca-45ce-bb6d-5c0d2d7b8716" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CoverCategories>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+      </web:CoverCategories>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CoverCategories"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ad5e1cdd-c824-452e-aeef-e96d3b3ea526" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Covers" name="Covers" bindingOperationName="Covers" type="Request-Response" outputName="Covers_Result" inputName="Covers" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="525a1279-056e-43b3-ac95-1fc550cc3be1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:cov="urn:microsoft-dynamics-nav/xmlports/Covers">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Covers>
+         <web:iTable>
+            <cov:Records>
+               <cov:Code></cov:Code>
+               <cov:Description></cov:Description>
+               <cov:Type></cov:Type>
+            </cov:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+         <web:insCompanyCode>AIG</web:insCompanyCode>
+      </web:Covers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Covers"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="61bda55e-9243-4f04-bc1d-370fb12be199" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CoversByPackage" name="CoversByPackage" bindingOperationName="CoversByPackage" type="Request-Response" outputName="CoversByPackage_Result" inputName="CoversByPackage" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1a2cc456-8b63-41ee-b82f-d2f55c0e43d9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:cov="urn:microsoft-dynamics-nav/xmlports/Covers">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CoversByPackage>
+         <web:iTable>
+            <cov:Records>
+               <cov:Code></cov:Code>
+               <cov:Description></cov:Description>
+               <cov:Type></cov:Type>
+            </cov:Records>
+         </web:iTable>
+         <web:packageCode>PAU00001</web:packageCode>
+         <web:insObjectTypeCode></web:insObjectTypeCode>
+         <web:insObjectTypeGroupCode></web:insObjectTypeGroupCode>
+         <web:brokerNo></web:brokerNo>
+         <web:referenceDate></web:referenceDate>
+      </web:CoversByPackage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CoversByPackage"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="bd84656d-7cbf-4f44-9150-87b440f7b0a2" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomerDiscountGroups" name="CustomerDiscountGroups" bindingOperationName="CustomerDiscountGroups" type="Request-Response" outputName="CustomerDiscountGroups_Result" inputName="CustomerDiscountGroups" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="990a7fc4-4d7e-42bb-abe9-865c7b628c09" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CustomerDiscountGroups>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:CustomerDiscountGroups>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomerDiscountGroups"/></con:call></con:operation><con:operation id="2354fa72-5229-458e-91d6-0996d435c35f" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFields" name="CustomFields" bindingOperationName="CustomFields" type="Request-Response" outputName="CustomFields_Result" inputName="CustomFields" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b06d0d28-181c-4415-ab17-0f819f537ff6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:cov="urn:microsoft-dynamics-nav/xmlports/Covers">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CustomFields>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <cov:Records>
+               <!--Optional:-->
+               <cov:Code>?</cov:Code>
+               <!--Optional:-->
+               <cov:Description>?</cov:Description>
+               <!--Optional:-->
+               <cov:Type>?</cov:Type>
+            </cov:Records>
+            gero
+         </web:iTable>
+      </web:CustomFields>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFields"/></con:call></con:operation><con:operation id="654d3421-9ca8-40f4-b7b8-e490c28819ca" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsPerTemplate" name="CustomFieldsPerTemplate" bindingOperationName="CustomFieldsPerTemplate" type="Request-Response" outputName="CustomFieldsPerTemplate_Result" inputName="CustomFieldsPerTemplate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5db27b34-d85b-40a8-ad2f-455e7c46e51f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CustomFieldsPerTemplate>
+         <web:templateCode>?</web:templateCode>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:CustomFieldsPerTemplate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsPerTemplate"/></con:call></con:operation><con:operation id="fd722754-ddd9-401a-9606-cb168ea78e28" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsTemplates" name="CustomFieldsTemplates" bindingOperationName="CustomFieldsTemplates" type="Request-Response" outputName="CustomFieldsTemplates_Result" inputName="CustomFieldsTemplates" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e40ecde-6b19-4a8c-aa20-ea243f7a39e1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CustomFieldsTemplates>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:CustomFieldsTemplates>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsTemplates"/></con:call></con:operation><con:operation id="47b04138-e979-43d4-9edc-2a621cdb841e" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsValues" name="CustomFieldsValues" bindingOperationName="CustomFieldsValues" type="Request-Response" outputName="CustomFieldsValues_Result" inputName="CustomFieldsValues" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="40a01fcf-08d2-4344-bceb-1c340259fcb8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:CustomFieldsValues>
+         <web:code>?</web:code>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:CustomFieldsValues>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:CustomFieldsValues"/></con:call></con:operation><con:operation id="67020ef5-b226-41ac-beea-2d3016420f82" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Discounts" name="Discounts" bindingOperationName="Discounts" type="Request-Response" outputName="Discounts_Result" inputName="Discounts" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1ca7abac-a23a-43d5-9b96-6f18e4422e94" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:dis="urn:microsoft-dynamics-nav/xmlports/Discount_Charges">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Discounts>
+         <web:iTable>
+            <dis:Records>
+               <dis:Code></dis:Code>
+               <dis:Description></dis:Description>
+               <dis:Percentage></dis:Percentage>
+               <dis:Amount></dis:Amount>
+            </dis:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+         <web:insCompanyCode>AIG</web:insCompanyCode>
+      </web:Discounts>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Discounts"/><con:wsrmConfig version="1.2"/></con:call><con:call id="38d430dc-8b5c-438a-8eb0-bb89a82cbc4f" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:dis="urn:microsoft-dynamics-nav/xmlports/Discount_Charges">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Discounts>
+         <web:iTable>
+            <dis:Records>
+               <dis:Code></dis:Code>
+               <dis:Description></dis:Description>
+               <dis:Percentage></dis:Percentage>
+               <dis:Amount></dis:Amount>
+            </dis:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+         <web:insCompanyCode>AIG</web:insCompanyCode>
+      </web:Discounts>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Discounts"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="710578fd-7fa3-4433-aca0-028b442afc37" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:DiscountsByPackage" name="DiscountsByPackage" bindingOperationName="DiscountsByPackage" type="Request-Response" outputName="DiscountsByPackage_Result" inputName="DiscountsByPackage" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="29baa52e-0d2a-467f-bcda-399dcb761111" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:dis="urn:microsoft-dynamics-nav/xmlports/Discount_Charges">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DiscountsByPackage>
+         <web:iTable>
+            <dis:Records>
+               <dis:Code></dis:Code>
+               <dis:Description></dis:Description>
+               <dis:Percentage></dis:Percentage>
+               <dis:Amount></dis:Amount>
+            </dis:Records>
+         </web:iTable>
+         <web:packageCode>PAU00001</web:packageCode>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+         <web:insCompanyCode>AIG</web:insCompanyCode>
+      </web:DiscountsByPackage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:DiscountsByPackage"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="518b3aec-f068-4ed6-91a8-e3d294f85969" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:DurationTypes" name="DurationTypes" bindingOperationName="DurationTypes" type="Request-Response" outputName="DurationTypes_Result" inputName="DurationTypes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2aee9efc-d290-4cb0-89f5-19eee7a10c70" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DurationTypes>
+         <web:insCategory>MOTOR</web:insCategory>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:DurationTypes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:DurationTypes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b37d357c-3ee2-4e55-b48e-562bdedd4275" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:EndorsementReasons" name="EndorsementReasons" bindingOperationName="EndorsementReasons" type="Request-Response" outputName="EndorsementReasons_Result" inputName="EndorsementReasons" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9b860335-45e0-46cc-a401-585cdf3228d9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:EndorsementReasons>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:EndorsementReasons>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:EndorsementReasons"/></con:call></con:operation><con:operation id="7718972c-2f76-4947-bc58-d9e383926661" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsCategories" name="InsCategories" bindingOperationName="InsCategories" type="Request-Response" outputName="InsCategories_Result" inputName="InsCategories" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9d80c527-84b7-4a1a-990f-f563f5c4f722" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:InsCategories>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:InsCategories>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsCategories"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2e87943a-9d5c-4be0-bb52-24d9b622326e" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsCompanies" name="InsCompanies" bindingOperationName="InsCompanies" type="Request-Response" outputName="InsCompanies_Result" inputName="InsCompanies" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f3b370f2-89f1-46c9-8637-9a52527604a2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:InsCompanies>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:InsCompanies>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsCompanies"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ee30ef5c-8af0-48b3-969e-a4665d789aea" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsObjectTypeGroups" name="InsObjectTypeGroups" bindingOperationName="InsObjectTypeGroups" type="Request-Response" outputName="InsObjectTypeGroups_Result" inputName="InsObjectTypeGroups" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0ac9072f-a1e0-4654-8e6c-b7ab3898f2ca" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:InsObjectTypeGroups>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+         <web:insSubCategoryCode></web:insSubCategoryCode>
+      </web:InsObjectTypeGroups>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsObjectTypeGroups"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ee154274-f150-4557-9e98-8cdb0c3e87a7" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsObjectTypes" name="InsObjectTypes" bindingOperationName="InsObjectTypes" type="Request-Response" outputName="InsObjectTypes_Result" inputName="InsObjectTypes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="23f93f55-25da-4140-9c7d-3f16e6714d26" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:InsObjectTypes>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+      </web:InsObjectTypes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>INSNEMO\WS</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsObjectTypes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ce25e7a9-f6e4-4e42-904f-d67022e112a9" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsSubCategories" name="InsSubCategories" bindingOperationName="InsSubCategories" type="Request-Response" outputName="InsSubCategories_Result" inputName="InsSubCategories" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7c81b37-32c0-4fe6-b005-1a35e2ed65fd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:InsSubCategories>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+      </web:InsSubCategories>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:InsSubCategories"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7614b722-a253-42a9-baea-b4b7f0b95438" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Makes" name="Makes" bindingOperationName="Makes" type="Request-Response" outputName="Makes_Result" inputName="Makes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6651dee9-3093-4e96-b031-7770079c4f0b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Makes>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:Makes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Makes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="79e84f71-f38c-4a8b-afcc-b995d513aa13" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:MakesByType" name="MakesByType" bindingOperationName="MakesByType" type="Request-Response" outputName="MakesByType_Result" inputName="MakesByType" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="695abfd3-8183-4734-81fe-8ccdbf5efa20" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:ins="urn:microsoft-dynamics-nav/xmlports/Ins_Makes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:MakesByType>
+         <web:iTable>
+            <ins:Records>
+               <ins:Code></ins:Code>
+               <ins:Name></ins:Name>
+               <ins:Type></ins:Type>
+            </ins:Records>
+         </web:iTable>
+         <web:makeType>1</web:makeType>
+      </web:MakesByType>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:MakesByType"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="336ccffc-fd6e-42b7-bd3b-073d9256ae79" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Models" name="Models" bindingOperationName="Models" type="Request-Response" outputName="Models_Result" inputName="Models" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e79aa4af-ae56-48e8-bce4-5a4268c68912" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Models>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+         <web:makeCode>BMW</web:makeCode>
+      </web:Models>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Models"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8af6f7a4-c77b-4143-99ba-7de62ec8b417" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Packages" name="Packages" bindingOperationName="Packages" type="Request-Response" outputName="Packages_Result" inputName="Packages" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="271ef6cf-9477-438a-a616-3264ef0d7537" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Packages>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+         <web:insCategoryCode>MOTOR</web:insCategoryCode>
+         <web:insCompanyCode>AIG</web:insCompanyCode>
+         <web:insObjectTypeCode></web:insObjectTypeCode>
+      </web:Packages>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>INSNEMO\ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Packages"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="203ac40d-daf4-4872-a9e7-41e6f4cd3d9d" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Ports" name="Ports" bindingOperationName="Ports" type="Request-Response" outputName="Ports_Result" inputName="Ports" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="06e71cb4-f580-4314-9bf4-5e69e2d6d281" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Ports>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:Ports>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Ports"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="81a434e1-1000-4ee3-9721-bacbfb0c8b7b" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Professions" name="Professions" bindingOperationName="Professions" type="Request-Response" outputName="Professions_Result" inputName="Professions" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="925a26a0-ae95-4ab3-90df-d30b7fcf30a9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Professions>
+         <web:iTable>
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:Professions>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Professions"/><con:wsrmConfig version="1.2"/></con:call><con:call id="6748e467-ebb5-49a6-9c93-ba42af4ccefa" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Professions>
+         <web:iTable>
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code></tab:Code>
+               <!--Optional:-->
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:Professions>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>INSNEMO\ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:Professions"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5570bdca-cdf2-4c32-8606-fe16014d1818" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:RelationTypes" name="RelationTypes" bindingOperationName="RelationTypes" type="Request-Response" outputName="RelationTypes_Result" inputName="RelationTypes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8258ac98-5d30-41c6-9de8-34e36f088548" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:RelationTypes>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:RelationTypes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:RelationTypes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="be816c66-b8be-4f87-951d-0889603fd27b" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:TaxOffices" name="TaxOffices" bindingOperationName="TaxOffices" type="Request-Response" outputName="TaxOffices_Result" inputName="TaxOffices" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="56520519-ce22-48ab-b7db-3a422e55380c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:TaxOffices>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:TaxOffices>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:TaxOffices"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ba93128a-49e8-4bc7-b1bd-dc267af91782" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VehicleTypes" name="VehicleTypes" bindingOperationName="VehicleTypes" type="Request-Response" outputName="VehicleTypes_Result" inputName="VehicleTypes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="28d848e6-21fc-452c-b6eb-4f0282eb4f4f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:VehicleTypes>
+         <web:iTable>
+            <tab:Records>
+               <tab:Code></tab:Code>
+               <tab:Description></tab:Description>
+            </tab:Records>
+         </web:iTable>
+      </web:VehicleTypes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>ws</con:username><con:password>7E?E3gR9*FZd7D?p</con:password><con:domain>INSNEMO</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VehicleTypes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0e504324-a055-4f88-975b-aea70043580e" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VesselClassSociety" name="VesselClassSociety" bindingOperationName="VesselClassSociety" type="Request-Response" outputName="VesselClassSociety_Result" inputName="VesselClassSociety" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2530cfd1-fa78-4b99-bdbe-ebfb60575b35" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:VesselClassSociety>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:VesselClassSociety>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VesselClassSociety"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d1235277-40a8-46a6-86a7-060a27a47d75" isOneWay="false" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VesselTypes" name="VesselTypes" bindingOperationName="VesselTypes" type="Request-Response" outputName="VesselTypes_Result" inputName="VesselTypes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="29a52dd9-d804-4c6d-a85a-a3a1ebc727f4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://soap.insnemo.gr:7047/WS/ws/AIG_UAT/Codeunit/WebDataMgt?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt" xmlns:tab="urn:microsoft-dynamics-nav/xmlports/Tables">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:VesselTypes>
+         <web:iTable>
+            e
+            <!--Zero or more repetitions:-->
+            <tab:Records>
+               <!--Optional:-->
+               <tab:Code>?</tab:Code>
+               <!--Optional:-->
+               <tab:Description>?</tab:Description>
+            </tab:Records>
+            gero
+         </web:iTable>
+      </web:VesselTypes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:microsoft-dynamics-schemas/codeunit/WebDataMgt:VesselTypes"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
