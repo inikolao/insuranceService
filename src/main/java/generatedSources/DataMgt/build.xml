@@ -95,12 +95,12 @@
     <target name="WebDataMgtPortClient" description="Run schemas.dynamics.microsoft.codeunit.webdatamgt.WebDataMgtPort_WebDataMgtPort_Client" depends="compile">
         <property name="param" value=""/>
         <cxfrun classname="schemas.dynamics.microsoft.codeunit.webdatamgt.WebDataMgtPort_WebDataMgtPort_Client"
-                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/WSDLS/Statements/WebDataMgt/WebDataMgt.wsdl"/>
+                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/src/main/resources/wsdls/Statements/WebDataMgt/WebDataMgt.wsdl"/>
     </target>
 
     <target name="WebDataMgtPortServer" description="Run schemas.dynamics.microsoft.codeunit.webdatamgt.WebDataMgtPort_WebDataMgtPort_Server" depends="compile">
         <cxfrun classname="schemas.dynamics.microsoft.codeunit.webdatamgt.WebDataMgtPort_WebDataMgtPort_Server"
-                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/WSDLS/Statements/WebDataMgt/WebDataMgt.wsdl"/>
+                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/src/main/resources/wsdls/Statements/WebDataMgt/WebDataMgt.wsdl"/>
     </target>
 
 

@@ -25,7 +25,7 @@ import javax.xml.ws.ResponseWrapper;
                       serviceName = "WebInquiry",
                       portName = "WebInquiry_Port",
                       targetNamespace = "urn:microsoft-dynamics-schemas/codeunit/WebInquiry",
-                      wsdlLocation = "file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/WSDLS/Statements/GetInquiry/GetInquiry.wsdl",
+                      wsdlLocation = "file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/src/main/resources/wsdls/GetInquiry/GetInquiry.wsdl",
                       endpointInterface = "schemas.dynamics.microsoft.codeunit.webinquiry.WebInquiryPort")
 
 public class WebInquiry_PortImpl implements WebInquiryPort {

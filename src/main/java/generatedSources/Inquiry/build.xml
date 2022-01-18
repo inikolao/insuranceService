@@ -95,12 +95,12 @@
     <target name="WebInquiryPortClient" description="Run schemas.dynamics.microsoft.codeunit.webinquiry.WebInquiryPort_WebInquiryPort_Client" depends="compile">
         <property name="param" value=""/>
         <cxfrun classname="schemas.dynamics.microsoft.codeunit.webinquiry.WebInquiryPort_WebInquiryPort_Client"
-                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/WSDLS/Statements/GetInquiry/GetInquiry.wsdl"/>
+                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/src/main/resources/wsdls/GetInquiry/GetInquiry.wsdl"/>
     </target>
 
     <target name="WebInquiryPortServer" description="Run schemas.dynamics.microsoft.codeunit.webinquiry.WebInquiryPort_WebInquiryPort_Server" depends="compile">
         <cxfrun classname="schemas.dynamics.microsoft.codeunit.webinquiry.WebInquiryPort_WebInquiryPort_Server"
-                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/WSDLS/Statements/GetInquiry/GetInquiry.wsdl"/>
+                   param1="file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/src/main/resources/wsdls/GetInquiry/GetInquiry.wsdl"/>
     </target>
 
 

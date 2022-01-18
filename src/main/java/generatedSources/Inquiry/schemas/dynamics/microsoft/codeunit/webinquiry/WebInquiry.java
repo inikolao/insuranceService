@@ -30,7 +30,7 @@ public class WebInquiry extends Service {
         } catch (MalformedURLException e) {
             java.util.logging.Logger.getLogger(WebInquiry.class.getName())
                 .log(java.util.logging.Level.INFO,
-                     "Can not initialize the default wsdl from {0}", "file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/WSDLS/Statements/GetInquiry/GetInquiry.wsdl");
+                     "Can not initialize the default wsdl from {0}", "file:/D:/Ioannis/Documents/Projects/Code/Java/insuranceService/src/main/resources/wsdls/GetInquiry/GetInquiry.wsdl");
         }
         WSDL_LOCATION = url;
     }
