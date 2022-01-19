@@ -18,6 +18,8 @@ public class NtmlAuthentication implements NtlmAuthenticationService {
     private String password;
     private String domain;
     private String URL;
+    private HttpEntity AuthResponse;
+    private String stringAuthResponse;
 
     public NtmlAuthentication() {
     }
@@ -36,10 +38,14 @@ public class NtmlAuthentication implements NtlmAuthenticationService {
             org.apache.http.HttpResponse response = httpClient.execute(post);
 
             HttpEntity responseEntity = response.getEntity();
+            AuthResponse=response.getEntity();
+
+            stringAuthResponse=response.toString();
 
             if (responseEntity != null) {
                 System.out.println(EntityUtils.toString(responseEntity));
-
+               // AuthResponse=responseEntity;
+                //stringAuthResponse=EntityUtils.toString(AuthResponse);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,6 +98,14 @@ public class NtmlAuthentication implements NtlmAuthenticationService {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public HttpEntity getAuthResponse() {
+        return AuthResponse;
+    }
+
+    public String getStringAuthResponse() {
+        return stringAuthResponse;
     }
 }
 

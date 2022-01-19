@@ -1,5 +1,7 @@
 package com.Insurance.WebService.services;
 
 
-public interface inquiryService {
+import generatedSources.Inquiry.schemas.dynamics.microsoft.codeunit.webinquiry.WebInquiryPort;
+
+public interface inquiryService extends WebInquiryPort {
 }

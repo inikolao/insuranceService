@@ -27,30 +27,10 @@ public final class WebInquiryPort_WebInquiryPort_Client {
 
     private static final QName SERVICE_NAME = new QName("urn:microsoft-dynamics-schemas/codeunit/WebInquiry", "WebInquiry");
 
+    private generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry WebInquiryXml;
     //private URL
     private WebInquiryPort_WebInquiryPort_Client() {
     }
-
-    public WebInquiryPort_WebInquiryPort_Client(String st)
-    {
-        URL wsdlURL = WebInquiry.WSDL_LOCATION;
-
-
-        WebInquiry ss = new WebInquiry(wsdlURL, SERVICE_NAME);
-        WebInquiryPort port = ss.getWebInquiryPort();
-
-        {
-            System.out.println("Invoking getInquiry...");
-            generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry _getInquiry_insInquiryVal = null;
-            javax.xml.ws.Holder<generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry> _getInquiry_insInquiry = new javax.xml.ws.Holder<generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry>(_getInquiry_insInquiryVal);
-            port.getInquiry(_getInquiry_insInquiry);
-
-            System.out.println("getInquiry._getInquiry_insInquiry=" + _getInquiry_insInquiry.value);
-
-        }
-
-    }
-
 
     public static void main(String args[]) throws java.lang.Exception {
         URL wsdlURL = WebInquiry.WSDL_LOCATION;
@@ -72,7 +52,7 @@ public final class WebInquiryPort_WebInquiryPort_Client {
         WebInquiryPort port = ss.getWebInquiryPort();
        // System.out.println("kslsm"+ss.getWSDLDocumentLocation());
         {
-        System.out.println("Invoking getInquiry...");
+
         generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry _getInquiry_insInquiryVal = null;
         javax.xml.ws.Holder<generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry> _getInquiry_insInquiry = new javax.xml.ws.Holder<generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry>(_getInquiry_insInquiryVal);
         port.getInquiry(_getInquiry_insInquiry);
@@ -84,4 +64,7 @@ public final class WebInquiryPort_WebInquiryPort_Client {
         System.exit(0);
     }
 
+    public generatedSources.Inquiry.nav.dynamics.microsoft.xmlports.webinquiry.WebInquiry getWebInquiryXml() {
+        return WebInquiryXml;
+    }
 }
